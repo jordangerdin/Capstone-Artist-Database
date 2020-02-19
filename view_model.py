@@ -15,6 +15,9 @@ class ViewModel:
     def getAllAvailableArtworksByArtist(self, artist):
         return self.db.getAllAvailableArtworksByArtist(artist)
 
+    def deleteArtwork(self, artwork):
+        self.db.deleteArtwork(artwork)
+
     def getAllArtists(self):
         return self.db.getAllArtists()
         

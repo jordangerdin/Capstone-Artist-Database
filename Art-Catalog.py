@@ -23,6 +23,8 @@ def main():
 
     artistView.show_available_artworks_by_artist('Jordan')
 
+    artistView.delete_artwork('Starry Night')
+
     artistView.show_all_artists()
     
 

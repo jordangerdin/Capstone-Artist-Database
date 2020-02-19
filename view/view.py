@@ -15,7 +15,6 @@ class View:
             if not name:
                 break
 
-            ## TODO validate email ??
             email = input('Enter email for ' + name + ': ')
 
             try:
@@ -34,23 +33,21 @@ class View:
             artwork = input('Enter name of artwork: ')
             if not artwork:
                 break
-            
-            ## TODO validate price as float
+    
             price = input('Enter price of artwork: ')
 
-            ## TODO validate as boolean
             availableInput = input('Is this piece for sale? y/n ')
             if availableInput == 'y':
                 available = True
             else:
                 available = False
+
             try:
                 self.view_model.insertArtwork(name, artwork, price, available)
             except ArtistError as e:
                 print(str(e))
 
     def show_artworks_by_artist(self, artist):
-        #artist = input('Enter an artist to search: ')
         print('All artworks by ' + artist + ':')
         allArtworks = self.view_model.getAllArtworksByArtist(artist)
 
@@ -58,12 +55,16 @@ class View:
             print(artwork['artwork'] + ', $' + str(artwork['price']) + ' For sale: ' + str(artwork['available']))
 
     def show_available_artworks_by_artist(self, artist):
-        #artist = input('Enter an artist to search: ')
         print('All available artworks by ' + artist + ':')
         allAvailableArtworks = self.view_model.getAllAvailableArtworksByArtist(artist)
 
         for artwork in allAvailableArtworks:
             print(artwork['artwork'] + ', $' + str(artwork['price']))
+
+    def delete_artwork(self, artwork):
+        print('Deleting ' + artwork + ' from database')
+        self.view_model.deleteArtwork(artwork)
+
 
     def show_all_artists(self):
         print('All artists in database: ')

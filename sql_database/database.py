@@ -35,6 +35,13 @@ class SQLArtistDB():
             (Artwork.artist == artist_id) & 
             (Artwork.available == True)).dicts()
         return query
+
+    def deleteArtwork(self, artwork):
+        try:
+            work = Artwork.get(Artwork.artwork == artwork)
+            work.delete_instance()
+        except Exception as err:
+            print(str(err))
     
     def getAllArtists(self):
         query = Artist.select().dicts()
