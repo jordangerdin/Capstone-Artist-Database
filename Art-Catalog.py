@@ -19,9 +19,9 @@ def main():
 
     artistView.add_new_artwork()
 
-    artistView.show_artworks_by_artist('Darren')
+    artistView.show_artworks_by_artist('Jordan')
 
-    artistView.show_available_artworks_by_artist('Darren')
+    artistView.show_available_artworks_by_artist('Jordan')
 
     artistView.show_all_artists()
     

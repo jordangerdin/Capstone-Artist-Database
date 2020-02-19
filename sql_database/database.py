@@ -31,9 +31,9 @@ class SQLArtistDB():
         return query
     
     def getAllAvailableArtworksByArtist(self, artist_id):
-        query = Artwork.select().where(Artwork.artist == artist_id, Artwork.available == False).dicts()
-        for row in query:
-            print(row['available'])
+        query = Artwork.select().where(
+            (Artwork.artist == artist_id) & 
+            (Artwork.available == True)).dicts()
         return query
     
     def getAllArtists(self):
