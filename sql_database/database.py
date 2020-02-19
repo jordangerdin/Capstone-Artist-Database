@@ -42,6 +42,11 @@ class SQLArtistDB():
             work.delete_instance()
         except Exception as err:
             print(str(err))
+
+    #def modifyArtwork(self, artist, artwork, price, available):
+    #    query = Artwork.get(Artwork.artwork == artwork)
+    #    query.save(Artwork.artist = artist, Artwork.price = price, Artwork.available = available)
+        
     
     def getAllArtists(self):
         query = Artist.select().dicts()

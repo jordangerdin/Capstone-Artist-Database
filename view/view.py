@@ -65,6 +65,9 @@ class View:
         print('Deleting ' + artwork + ' from database')
         self.view_model.deleteArtwork(artwork)
 
+    #def modify_artwork(self, artwork):   
+    #    print('Updating ' + artwork)
+
 
     def show_all_artists(self):
         print('All artists in database: ')

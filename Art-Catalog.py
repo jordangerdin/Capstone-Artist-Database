@@ -14,7 +14,6 @@ def main():
     artistView = View(artistViewModel)
 
     # UI stuff
-
     artistView.add_new_artist()
 
     artistView.add_new_artwork()
@@ -24,6 +23,8 @@ def main():
     artistView.show_available_artworks_by_artist('Jordan')
 
     artistView.delete_artwork('Starry Night')
+
+    #artistView.modify_artwork('American Gothic')
 
     artistView.show_all_artists()
     
